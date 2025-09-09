@@ -24,19 +24,19 @@ let browser;
 async function initBrowser() {
   try {
    browser = await puppeteer.launch({
-   headless: true,
-   executablePath: process.env.CHROME_BIN || '/usr/bin/google-chrome',
-   args: [
-     '--no-sandbox',
-     '--disable-setuid-sandbox',
-     '--disable-dev-shm-usage',
-     '--disable-accelerated-2d-canvas',
-     '--no-first-run',
-     '--no-zygote',
-     '--single-process',
-     '--disable-gpu'
-   ]
- });
+  headless: true,
+  executablePath: process.env.CHROME_BIN || '/usr/bin/google-chrome',
+  args: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-accelerated-2d-canvas',
+    '--no-first-run',
+    '--no-zygote',
+    '--single-process',
+    '--disable-gpu'
+  ]
+});
 
     console.log('Browser initialized successfully');
   } catch (error) {
