@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: html-to-png-service
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
+        value: "true"
+    buildpacks:
+      - https://github.com/render-examples/chrome-buildpack
